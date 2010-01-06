@@ -1,0 +1,8 @@
+class ProjectJoinHook < Redmine::Hook::ViewListener
+
+  def view_projects_show_right(context = {})
+    # return "<a href=\"/community/join\">Join this project!</a>"
+    return link_to("Join this project!", :controller => 'community', :action => 'create', :project_id => @project)
+  end
+
+end
